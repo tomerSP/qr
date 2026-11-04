@@ -1,7 +1,7 @@
 # QR
 
 File & text → QR code, and QR image decoding, entirely in the browser.
-Live at https://tomersp.github.io/qr/.
+Live at https://tsp-qr-maker.netlify.app/.
 
 ## Layout
 

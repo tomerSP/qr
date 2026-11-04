@@ -6,15 +6,15 @@ Conventions for this repo. Read before editing anything.
 
 File & text → QR code, and QR image decoding. One project of Tomer's
 Playground; the hub lives in the `playground` repo at
-`https://tomersp.github.io/playground/`.
+`https://tsp-playground.netlify.app/`.
 
 The repo is the whole project: published page, tests, prototypes, planning.
 Only `site/` is public.
 
-## Publishing target: GitHub Pages → `site/`
+## Publishing target: Netlify → `site/`
 
-`.github/workflows/pages.yml` publishes `site/` to
-`https://tomersp.github.io/qr/` on every push to `main`. The rules below are
+Netlify publishes `site/` (set in `netlify.toml`) to
+`https://tsp-qr-maker.netlify.app/` on every push to `main`. The rules below are
 constraints of that target and apply to `site/` only. Everything outside
 `site/` may use whatever it needs. An idea that conflicts with them is out of
 scope for the published page, not rejected: say so, note it for later, and
@@ -63,7 +63,7 @@ theme, because scanners need the contrast.
 
 The page needs a `<title>`, `<meta name="description">` written for the search
 query a real person would type, and a canonical link to
-`https://tomersp.github.io/qr/`. The copy is the product.
+`https://tsp-qr-maker.netlify.app/`. The copy is the product.
 
 ## Honesty in the UI
 
