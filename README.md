@@ -6,7 +6,7 @@ Live at https://tsp-qr-maker.netlify.app/.
 ## Layout
 
 ```
-site/          the published page (GitHub Pages serves this folder)
+site/          the published page (Netlify serves this folder)
 tests/         browser test pages
 prototypes/    experiments
 docs/          planning
@@ -22,4 +22,5 @@ Then open `/site/` for the page or `/tests/` for the test pages.
 
 ## Deploy
 
-Push to `main`. `.github/workflows/pages.yml` publishes `site/`.
+Push to `main`; Netlify publishes `site/` (set in `netlify.toml`). Other
+branches and pull requests get Netlify preview URLs.
