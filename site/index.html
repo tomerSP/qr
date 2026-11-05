@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>QR code generator &amp; image decoder — free and offline</title>
+<title>QR Generator</title>
 <meta name="description" content="Create a QR code from text, Wi-Fi details or a small file, or decode a QR code from an image. Free, private and entirely in your browser.">
 <link rel="canonical" href="https://tsp-qr-maker.netlify.app/">
 <link rel="preload" href="./assets/fonts/atkinson-next-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./assets/style.css">
+<script src="./assets/theme.js"></script>
 <style>
   .tabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
   .tabs button[aria-selected="true"] {
@@ -72,10 +73,7 @@
   .check-label input { margin: 0; width: auto; }
   .structured-option { font-size: 13px; margin-top: 10px; }
   @media (max-width: 520px) { .encoding-grid { grid-template-columns: 1fr; } }
-  .file-warning { color: #9a4a1e; font-weight: 600; }
-  @media (prefers-color-scheme: dark) {
-    .file-warning { color: #ffd54f; }
-  }
+  .file-warning { color: var(--warn); font-weight: 600; }
   details { margin-top: 28px; font-size: 14px; color: var(--muted); }
   summary { cursor: pointer; color: var(--ink); width: fit-content; }
   details p { max-width: 62ch; }
@@ -85,11 +83,11 @@
 <div class="wrap">
 
   <header class="site">
-    <a class="brand" href="https://tsp-playground.netlify.app/">Tomer's Playground</a>
-    <nav class="site"><a href="https://tsp-playground.netlify.app/">All tools</a><a href="https://tsp-playground.netlify.app/about/">About</a></nav>
+    <a class="brand" href="https://tsp-playground.netlify.app/">My Playground</a>
+    <nav class="site"><a href="https://tsp-playground.netlify.app/about/">About</a></nav>
   </header>
 
-  <h1>QR code generator &amp; image decoder</h1>
+  <h1>QR Generator</h1>
   <p class="lede">
     Create a code from text, Wi-Fi details or a small file—or decode one from
     an image. Nothing leaves your browser.
@@ -191,11 +189,11 @@
             </select>
           </div>
           <div class="field">
-            <label for="margin">Quiet margin</label>
+            <label for="margin">Margin</label>
             <select id="margin">
               <option value="4" selected>4 modules (standard)</option>
               <option value="2">2 modules</option>
-              <option value="0">None</option>
+              <option value="0">Minimal</option>
             </select>
           </div>
         </div>

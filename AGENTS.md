@@ -4,7 +4,7 @@ Conventions for this repo. Read before editing anything.
 
 ## What this is
 
-File & text → QR code, and QR image decoding. One project of Tomer's
+File & text → QR code, and QR image decoding. One project of My
 Playground; the hub lives in the `playground` repo at
 `https://tsp-playground.netlify.app/`.
 
@@ -33,6 +33,7 @@ don't refuse or water down the idea.
 site/                published page
   index.html
   assets/style.css   copy of the playground shell (see Styling)
+  assets/theme.js    light/dark/system switch (shell copy)
   vendor/            vendored third-party libs
   *.js               page modules
 tests/               browser test pages; load code from ../site/
@@ -49,7 +50,7 @@ docs/roadmap.md      planning
 
 ## Styling
 
-`site/assets/style.css` and `site/assets/fonts/` are copies of the shared
+`site/assets/style.css`, `site/assets/theme.js` and `site/assets/fonts/` are copies of the shared
 playground shell, so the page looks like the rest of the site. Design
 decisions for the whole site family are in the hub repo's
 `docs/design-brief.md`. Use its custom properties (`--ink`, `--bg`,
