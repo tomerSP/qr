@@ -6,19 +6,25 @@
 <title>QR code generator &amp; image decoder — free and offline</title>
 <meta name="description" content="Create a QR code from text, Wi-Fi details or a small file, or decode a QR code from an image. Free, private and entirely in your browser.">
 <link rel="canonical" href="https://tsp-qr-maker.netlify.app/">
+<link rel="preload" href="./assets/fonts/atkinson-next-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./assets/style.css">
 <style>
   .tabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
   .tabs button[aria-selected="true"] {
-    background: var(--accent); color: var(--accent-ink); border-color: var(--accent);
+    background: var(--accent-soft); color: var(--accent); border-color: var(--accent);
   }
 
   .cols { display: grid; grid-template-columns: 1fr 300px; gap: 20px; align-items: start; }
   @media (max-width: 720px) { .cols { grid-template-columns: 1fr; } }
 
   .field { margin-bottom: 14px; }
+  .panel > .field:last-child { margin-bottom: 0; }
+  @media (max-width: 520px) { .tabs { display: grid; grid-template-columns: 1fr 1fr; } }
   .row { display: flex; gap: 12px; }
-  .row .field { flex: 1; }
+  .row .field { flex: 1; min-width: 0; }
+  @media (max-width: 520px) { .row { flex-direction: column; gap: 0; } }
+  #generator-settings { margin-top: 16px; }
+  #structured-note { font-family: var(--sans); }
 
   .meter { font: 12px var(--mono); color: var(--muted); margin-top: 6px; }
   .meter.over { color: var(--warn); font-weight: 600; }
@@ -41,7 +47,7 @@
   .empty { color: #999; font-size: 14px; text-align: center; }
 
   .actions { display: flex; gap: 8px; margin-top: 12px; }
-  .actions button { flex: 1; }
+  .actions button { flex: 1; white-space: nowrap; }
 
   .note { font-size: 13px; color: var(--muted); margin-top: 24px; }
   #file-encoding-note { margin-top: 8px; }
@@ -78,11 +84,12 @@
 <body>
 <div class="wrap">
 
-  <div class="crumb"><a href="https://tsp-playground.netlify.app/">← Tomer's Playground</a></div>
-
   <header class="site">
-    <h1>QR code generator &amp; image decoder</h1>
+    <a class="brand" href="https://tsp-playground.netlify.app/">Tomer's Playground</a>
+    <nav class="site"><a href="https://tsp-playground.netlify.app/">All tools</a><a href="https://tsp-playground.netlify.app/about/">About</a></nav>
   </header>
+
+  <h1>QR code generator &amp; image decoder</h1>
   <p class="lede">
     Create a code from text, Wi-Fi details or a small file—or decode one from
     an image. Nothing leaves your browser.
@@ -172,8 +179,8 @@
           Decoded locally; images are never uploaded.</p>
       </section>
 
-      <div id="generator-settings">
-        <div class="row" style="margin-top:16px">
+      <div id="generator-settings" class="panel">
+        <div class="row">
           <div class="field">
             <label for="ec">Error correction</label>
             <select id="ec">
@@ -246,6 +253,7 @@
   </details>
 
   <footer class="site">
+    <p>Vibe coded, one small tool at a time.</p>
     Runs entirely in your browser — no file is ever uploaded.
     QR encoding by <a href="https://github.com/kazuhikoarase/qrcode-generator">qrcode-generator</a> (MIT).
     Image decoding by <a href="https://github.com/cozmo/jsQR">jsQR</a>

@@ -49,8 +49,10 @@ docs/roadmap.md      planning
 
 ## Styling
 
-`site/assets/style.css` is a copy of the shared playground shell, so the page
-looks like the rest of the site. Use its custom properties (`--ink`, `--bg`,
+`site/assets/style.css` and `site/assets/fonts/` are copies of the shared
+playground shell, so the page looks like the rest of the site. Design
+decisions for the whole site family are in the hub repo's
+`docs/design-brief.md`. Use its custom properties (`--ink`, `--bg`,
 `--panel`, `--line`, `--accent`, `--muted`); never hard-code a color that has a
 token — dark mode is driven entirely by those tokens. Page-specific CSS goes in
 the page's `<style>` block, not the shared file, so the copy stays easy to
