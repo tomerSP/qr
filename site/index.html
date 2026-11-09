@@ -243,7 +243,7 @@
       extra on top of the raw size, so the practical limit is roughly 2&nbsp;KB.
       Raw-byte mode uses the full capacity, but ordinary scanners may not know
       the file type or how to save it. Packed mode spends a few bytes preserving
-      the filename and type, but only this site promises to restore it. Enable
+      the filename and type, but it is this site’s own format, so you need this site to restore it. Enable
       multiple codes to split larger results across up to 16 Structured Append
       symbols; scanner support varies. Anything beyond that must be uploaded
       somewhere and linked to by URL.
@@ -393,7 +393,7 @@
     var encoding = fileEncoding();
     if (encoding === 'packed') {
       $('file-encoding-note').innerHTML =
-        'Compresses when useful and preserves the filename and file type. <span class="file-warning">Only this site promises to restore Packed files.</span>';
+        'Compresses when useful and preserves the filename and file type. <span class="file-warning">Packed is this site’s own format; use this site to restore it.</span>';
       if (packedState === 'loading') {
         $('file-encoding-note').appendChild(document.createTextNode(' Compressing locally…'));
       } else if (packedState === 'ready' && packedReason === 'smaller') {
